@@ -13,15 +13,6 @@ public class Brick {
       this.hp = hp;
   }
   
-  public void draw() {
-    currentColor = selectColor();
-    fill(currentColor);  // 
-    rect(x, y, brickWidth, brickHeight);
-    fill(textColor);
-    textSize(18);
-    text(str(hp), x + 32, y + 18);
-  }
-  
   color selectColor() {
     color selectedColor = color(255, 255, 255);
     switch(hp) {
@@ -49,5 +40,14 @@ public class Brick {
   public void damage() {
     gold++;
     hp--;
+  }
+  
+  public void draw() {
+    currentColor = selectColor();
+    fill(currentColor);  // 
+    rect(x, y, brickWidth, brickHeight);
+    fill(textColor);
+    textSize(18);
+    text(str(hp), x + 32, y + 18);
   }
 }

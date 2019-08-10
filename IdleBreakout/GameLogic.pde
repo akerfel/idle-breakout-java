@@ -19,3 +19,9 @@ void makeRectOfBricks(int x, int y, int w, int h, int hp) {
     }
   }
 }
+
+void updateBasicBalls() {
+  for(BasicBall basicBall: basicBalls) {
+    basicBall.update();
+  }
+}
