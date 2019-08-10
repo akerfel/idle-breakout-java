@@ -3,9 +3,9 @@ int gold;
 ArrayList<Brick> bricks = new ArrayList<Brick>();
 
 void setup() {
-  size(600, 800);
+  size(800, 600);
   
-  Brick brick = new Brick(75, 75, 1);
+  Brick brick = new Brick(150, 100, 2);
   bricks.add(brick);
 }
 
