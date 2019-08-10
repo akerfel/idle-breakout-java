@@ -10,5 +10,7 @@ void setup() {
 }
 
 void draw() {
-    drawEverything();
+  background(244, 238, 215);
+  removeDeadBricks();
+  drawEverything();
 }

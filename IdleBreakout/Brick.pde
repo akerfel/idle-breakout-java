@@ -4,7 +4,7 @@ public class Brick {
   int w = 75;
   int h = 25; 
   
-  int hp;
+  public int hp;
   color currentColor;
   color textColor = color(0, 0, 0);
   
@@ -15,14 +15,13 @@ public class Brick {
   }
   
   public void draw() {
-    rectMode(CENTER);
     
     currentColor = selectColor();
     fill(currentColor);  // 
     rect(x, y, w, h);
     fill(textColor);
     textSize(18);
-    text(str(hp), x - 5, y + 5);
+    text(str(hp), x + 32, y + 18);
   }
   
   color selectColor() {
@@ -36,5 +35,13 @@ public class Brick {
         break;
     }
   return selectedColor;
+  }
+  
+  public boolean mouseOn() {
+    return mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY < y + h;
+  }
+  
+  public int getHp() {
+    return hp;  
   }
 }
