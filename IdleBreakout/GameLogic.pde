@@ -14,7 +14,7 @@ void removeDeadBricks() {
 void makeRectOfBricks(int x, int y, int w, int h, int hp) {
   for (int i = 0; i < w; i++) {
     for (int j = 0; j < h; j++) {
-      Brick newBrick = new Brick(x + i * brickWidth, y + j * brickHeight, hp);
+      Brick newBrick = new Brick(x + i * (brickWidth + 3), y + j * (brickHeight + 3), hp);
       bricks.add(newBrick);
     }
   }

@@ -1,7 +1,6 @@
 public class Brick {
-  int x;
-  int y;
-  
+  public int x;
+  public int y;
   
   public int hp;
   color currentColor;
