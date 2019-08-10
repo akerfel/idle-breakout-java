@@ -1,16 +1,15 @@
 int gold = 0;
-color textColor = color(0, 0, 0);
 ArrayList<Brick> bricks = new ArrayList<Brick>();
 
 void setup() {
   size(800, 600);
   
-  Brick brick = new Brick(150, 100, 2);
-  bricks.add(brick);
+  makeRectOfBricks(60, 30, 5, 7, 3);
+  makeRectOfBricks(400, 30, 5, 7, 3);
 }
 
 void draw() {
-  background(244, 238, 215);
+  background(backgroundColor);
   removeDeadBricks();
   drawEverything();
 }

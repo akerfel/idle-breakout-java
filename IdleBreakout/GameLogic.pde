@@ -10,3 +10,12 @@ void removeDeadBricks() {
     }
   }
 }
+
+void makeRectOfBricks(int x, int y, int w, int h, int hp) {
+  for (int i = 0; i < w; i++) {
+    for (int j = 0; j < h; j++) {
+      Brick newBrick = new Brick(x + i * brickWidth, y + j * brickHeight, hp);
+      bricks.add(newBrick);
+    }
+  }
+}
