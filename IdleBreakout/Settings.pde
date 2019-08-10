@@ -5,5 +5,5 @@ color basicBallColor = color(253, 255, 85);
 int brickWidth = 51;
 int brickHeight = 24;
 
-float basicBallSpeed = 5.0; // This is speed, not velocity. speedBasicBall = sqrt(vx^2 + vy^2)
+float basicBallSpeed = 3.0; // This is speed, not velocity. speedBasicBall = sqrt(vx^2 + vy^2)
 int basicBallDiameter = 15;

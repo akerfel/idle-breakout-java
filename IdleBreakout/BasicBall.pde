@@ -27,6 +27,12 @@ public class BasicBall {
   public void update() {
     x += vx;
     y += vy;
+    if (x <= 0 || x >= width) {
+      vx *= -1.0;  
+    }
+    if (y <= 0 ||y >= height) {
+      vy *= -1.0;  
+    }
   }
   
   public void draw() {
