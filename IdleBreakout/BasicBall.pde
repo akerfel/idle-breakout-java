@@ -27,6 +27,17 @@ public class BasicBall {
   public void update() {
     x += vx;
     y += vy;
+    checkWallBounce();
+    checkBrickBounce();
+  }
+  
+  public void checkBrickBounce() {
+    for (Brick brick: bricks) {
+      
+    }
+  }
+  
+  public void checkWallBounce() {
     if (x <= 0 || x >= width) {
       vx *= -1.0;  
     }
@@ -37,6 +48,6 @@ public class BasicBall {
   
   public void draw() {
     fill(basicBallColor);  // 
-    circle(x, y, basicBallDiameter);
+    square(x, y, basicBallDiameter);
   }
 }
