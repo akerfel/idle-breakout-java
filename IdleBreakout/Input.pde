@@ -1,7 +1,7 @@
 void mousePressed() {
   for (Brick brick : bricks) {
     if (brick.mouseOn()) {
-      brick.hp--;  
+      brick.damage();
     }
   }
 }

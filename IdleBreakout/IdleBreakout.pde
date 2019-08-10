@@ -1,5 +1,5 @@
-int gold;
-
+int gold = 0;
+color textColor = color(0, 0, 0);
 ArrayList<Brick> bricks = new ArrayList<Brick>();
 
 void setup() {

@@ -6,7 +6,7 @@ public class Brick {
   
   public int hp;
   color currentColor;
-  color textColor = color(0, 0, 0);
+ 
   
   public Brick(int x, int y, int hp) {
       this.x = x;
@@ -15,7 +15,6 @@ public class Brick {
   }
   
   public void draw() {
-    
     currentColor = selectColor();
     fill(currentColor);  // 
     rect(x, y, w, h);
@@ -43,5 +42,10 @@ public class Brick {
   
   public int getHp() {
     return hp;  
+  }
+  
+  public void damage() {
+    gold++;
+    hp--;
   }
 }
