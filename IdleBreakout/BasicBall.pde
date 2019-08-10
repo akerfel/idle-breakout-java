@@ -36,11 +36,11 @@ public class BasicBall {
     int yint = int(y);
     
     for (Brick brick: bricks) {
-      if ( (xint == brick.x || xint == brick.x + brickWidth) && yint >= brick.y && yint <= brick.y + brickHeight) {
+      if ( (abs(xint - brick.x) < 5 || abs(xint - (brick.x + brickWidth)) < 5) && yint >= brick.y && yint <= brick.y + brickHeight) {
         vx *= -1.0;  
         brick.damage();
       }
-      else if ( (yint == brick.y || yint == brick.y + brickHeight) && xint >= brick.x && xint <= brick.x + brickWidth) {
+      else if ( (abs(yint - brick.y) < 5 || abs(yint - (brick.y + brickHeight)) < 5) && xint >= brick.x && xint <= brick.x + brickWidth) {
         vy *= -1.0;  
         brick.damage();
       }

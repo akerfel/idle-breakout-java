@@ -7,6 +7,8 @@ void setup() {
   
   makeRectOfBricks(60, 30, 5, 7, 3);
   makeRectOfBricks(400, 30, 5, 7, 3);
+  makeRectOfBricks(60, 400, 5, 7, 3);
+  makeRectOfBricks(400, 400, 5, 7, 3);
   
   BasicBall basicBall1 = new BasicBall(width/2, height/2);
   BasicBall basicBall2 = new BasicBall(width/2, height/2);
