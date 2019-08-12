@@ -48,7 +48,7 @@ public class BasicBall {
           y < brick.y + brick.h) {
         vx *= -1.0;
         brick.damage();
-        if (brick.hp == 0 && !brick.isWall) {  // Added with commit ad8388a. Read commit message for context (fixed bug).
+        if (brick.hp <= 0 && !brick.isWall) {  // Added with commit ad8388a. Read commit message for context (fixed bug).
           iterator.remove();  
         }
         break;
@@ -61,7 +61,7 @@ public class BasicBall {
           x < brick.x + brick.w) {
         vy *= -1.0;
         brick.damage();
-        if (brick.hp == 0 && !brick.isWall) {
+        if (brick.hp <= 0 && !brick.isWall) {
           iterator.remove();  
         }
         break;

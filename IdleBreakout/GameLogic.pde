@@ -5,7 +5,7 @@ void removeDeadBricks() {
   
   while (iterator.hasNext()) {
     Brick brick = iterator.next();
-    if (brick.hp == 0 && !brick.isWall) {
+    if (brick.hp <= 0 && !brick.isWall) {
       iterator.remove();  
     }
   }
