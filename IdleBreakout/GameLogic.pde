@@ -37,8 +37,9 @@ void checkIfNextLevel() {
 }
 
 void makeWallBricks() {
-  bricks.add(new Brick(0, 0, width, 45, -1));  //hp -1 means invincible
-  bricks.add(new Brick(0, height-20, width, 20, -1));
+  //hp -1 means invincible
+  bricks.add(new Brick(0, 0, width, 60, -1));    // top brick
+  bricks.add(new Brick(0, height-20, width, 40, -1));
   bricks.add(new Brick(0, 0, 20, height, -1));
   bricks.add(new Brick(width-20, 0, 20, height, -1));
 }

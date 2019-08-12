@@ -21,7 +21,7 @@ public void drawBasicBalls() {
 public void drawGold() {
   fill(textColor);
   String strGold = str(gold);
-  text("$:" + str(gold), width - (strGold.length() + 3) * 14, 17);
+  text("$:" + strGold, width - (strGold.length() + 3) * 14, 17);
 }
 
 public void drawLevelNumber() {
