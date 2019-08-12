@@ -26,3 +26,8 @@ public void loadLevel6() {
   makeRectOfBricks(width / 2 - 300, height / 2 - 100, 4, 8, 3);
   makeRectOfBricks(width / 2 + 100, height / 2 - 100, 4, 8, 3);
 }
+
+public void loadLevel100() {
+  makeRectOfBricks(width / 2 - 300, height / 2 - 100, 4, 8, 99);
+  makeRectOfBricks(width / 2 + 100, height / 2 - 100, 4, 8, 99);
+}

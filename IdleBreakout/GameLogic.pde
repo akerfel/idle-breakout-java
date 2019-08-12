@@ -20,7 +20,7 @@ void loadNextLevel() {
     case 4: loadLevel4(); break;  
     case 5: loadLevel5(); break;  
     case 6: loadLevel6(); break;  
-    
+    default: loadLevel100();
   }
 }
 
