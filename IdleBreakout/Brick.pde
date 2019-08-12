@@ -1,16 +1,18 @@
 public class Brick {
   public int x;
   public int y;
-  public int w = brickWidth;
-  public int h = brickHeight;
+  public int w;
+  public int h;
   
   public int hp;
   color currentColor;
  
   
-  public Brick(int x, int y, int hp) {
+  public Brick(int x, int y, int w, int h, int hp) {
       this.x = x;
       this.y = y;
+      this.w = w;
+      this.h = h;
       this.hp = hp;
   }
   
@@ -40,7 +42,9 @@ public class Brick {
   
   public void damage() {
     gold++;
-    hp--;
+    if (hp != -1) {  //hp -1 means invincible
+      hp--;
+    }
   }
   
   public void draw() {

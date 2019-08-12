@@ -18,5 +18,5 @@ public void drawBasicBalls() {
 
 public void drawGold() {
   fill(textColor);
-  text("$:" + str(gold), width - 50, 20);
+  text("$:" + str(gold), width - 250, 20);
 }
