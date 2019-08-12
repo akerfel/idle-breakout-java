@@ -20,11 +20,11 @@ public void drawBasicBalls() {
 public void drawGold() {
   fill(textColor);
   String strGold = str(gold);
-  text("$:" + str(gold), width - (strGold.length() + 3) * 14, 20);
+  text("$:" + str(gold), width - (strGold.length() + 3) * 14, 17);
 }
 
 public void drawLevelNumber() {
   fill(textColor);
   String strLevel = str(level);
-  text("Level: " + strLevel, 23, 16);
+  text("Level: " + strLevel, 23, 17);
 }

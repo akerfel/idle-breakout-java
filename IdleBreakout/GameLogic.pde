@@ -13,6 +13,15 @@ void removeDeadBricks() {
 
 void loadNextLevel() {
   level++;
+  
+  switch(level) {
+    case 2: loadLevel2(); break;  
+    case 3: loadLevel3(); break;  
+    case 4: loadLevel4(); break;  
+    case 5: loadLevel5(); break;  
+    case 6: loadLevel6(); break;  
+    
+  }
 }
 
 void checkIfNextLevel() {

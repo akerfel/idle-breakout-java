@@ -41,9 +41,9 @@ public class Brick {
   }
   
   public void damage() {
-    gold++;
     if (hp != -1) {  //hp -1 means invincible
       hp--;
+      gold++;
     }
   }
   
