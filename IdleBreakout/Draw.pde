@@ -2,6 +2,7 @@ public void drawEverything() {
   drawBricks();  
   drawBasicBalls();
   drawGold();
+  drawLevelNumber();
 }
 
 public void drawBricks() {
@@ -18,5 +19,12 @@ public void drawBasicBalls() {
 
 public void drawGold() {
   fill(textColor);
-  text("$:" + str(gold), width - 250, 20);
+  String strGold = str(gold);
+  text("$:" + str(gold), width - (strGold.length() + 3) * 14, 20);
+}
+
+public void drawLevelNumber() {
+  fill(textColor);
+  String strLevel = str(level);
+  text("Level: " + strLevel, 23, 16);
 }

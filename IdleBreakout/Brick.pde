@@ -51,8 +51,10 @@ public class Brick {
     currentColor = selectColor();
     fill(currentColor);  // 
     rect(x, y, w, h);
-    fill(textColor);
-    textSize(18);
-    text(str(hp), x + 32, y + 18);
+    if (hp != -1) {
+      fill(textColor);
+      textSize(18);
+      text(str(hp), x + 32, y + 18);
+    }
   }
 }

@@ -51,7 +51,6 @@ public class BasicBall {
         if (brick.hp == 0) {
           iterator.remove();  
         }
-        print("bounce_brick_nextx\t");
         break;
       }
       
@@ -65,7 +64,6 @@ public class BasicBall {
         if (brick.hp == 0) {
           iterator.remove();  
         }
-        print("bounce_brick_nexty\t");
         break;
       }
       

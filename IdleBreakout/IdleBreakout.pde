@@ -1,32 +1,35 @@
 int gold = 0;
+int level = 1;
 ArrayList<Brick> bricks = new ArrayList<Brick>();
 ArrayList<BasicBall> basicBalls = new ArrayList<BasicBall>();
 
 void setup() {
   size(800, 600);
-  
   makeWallBricks();
-  
-  makeRectOfBricks(60, 30, 1, 1, 3);
-  makeRectOfBricks(400, 30, 5, 7, 3);
-  makeRectOfBricks(60, 400, 5, 7, 3);
-  makeRectOfBricks(400, 400, 5, 7, 3);
+  loadLevel1();
   
   BasicBall basicBall1 = new BasicBall(width/2, height/2);
-  BasicBall basicBall2 = new BasicBall(width/2, height/2);
-  BasicBall basicBall3 = new BasicBall(width/2, height/2);
-  BasicBall basicBall4 = new BasicBall(width/2, height/2);
   basicBalls.add(basicBall1);
+  
+  BasicBall basicBall2 = new BasicBall(width/2, height/2);
   basicBalls.add(basicBall2);
+  
+  BasicBall basicBall3 = new BasicBall(width/2, height/2);
   basicBalls.add(basicBall3);
+  
+  BasicBall basicBall4 = new BasicBall(width/2, height/2);
   basicBalls.add(basicBall4);
+  
+  BasicBall basicBall5 = new BasicBall(width/2, height/2);
+  basicBalls.add(basicBall5);
   
 }
 
 void draw() {
   // Update game logic
-  removeDeadBricks();
   updateBasicBalls();
+  removeDeadBricks();  // I thought I could remove this but apparently not.
+  checkIfNextLevel();
   
   // Draw
   background(backgroundColor);

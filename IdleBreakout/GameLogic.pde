@@ -11,6 +11,17 @@ void removeDeadBricks() {
   }
 }
 
+void loadNextLevel() {
+  level++;
+}
+
+void checkIfNextLevel() {
+  if (bricks.size() == 4) {    // 4 left means there are no bricks left, because the walls are also bricks.
+      loadNextLevel();
+  }
+  println("size: " + bricks.size());
+}
+
 void makeWallBricks() {
   bricks.add(new Brick(0, 0, width, 20, -1));  //hp -1 means invincible
   bricks.add(new Brick(0, height-20, width, 20, -1));
