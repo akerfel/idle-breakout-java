@@ -51,7 +51,8 @@ public class BasicBall {
         if (brick.hp == 0) {
           iterator.remove();  
         }
-        println("bounce brick nextx");
+        print("bounce_brick_nextx\t");
+        break;
       }
       
       //if I keep moving in my current Y direction, will I collide with the center rectangle?
@@ -64,7 +65,8 @@ public class BasicBall {
         if (brick.hp == 0) {
           iterator.remove();  
         }
-        println("bounce brick nexty");
+        print("bounce_brick_nexty\t");
+        break;
       }
       
     }
