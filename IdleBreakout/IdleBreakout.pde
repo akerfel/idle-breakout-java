@@ -5,10 +5,10 @@ ArrayList<BasicBall> basicBalls = new ArrayList<BasicBall>();
 void setup() {
   size(800, 600);
   
-  makeRectOfBricks(60, 30, 5, 7, 3);
-  makeRectOfBricks(400, 30, 5, 7, 3);
+  makeRectOfBricks(60, 30, 1, 1, 3);
+  /*makeRectOfBricks(400, 30, 5, 7, 3);
   makeRectOfBricks(60, 400, 5, 7, 3);
-  makeRectOfBricks(400, 400, 5, 7, 3);
+  makeRectOfBricks(400, 400, 5, 7, 3);*/
   
   BasicBall basicBall1 = new BasicBall(width/2, height/2);
   BasicBall basicBall2 = new BasicBall(width/2, height/2);

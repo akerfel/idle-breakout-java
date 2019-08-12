@@ -6,4 +6,4 @@ int brickWidth = 51;
 int brickHeight = 24;
 
 float basicBallSpeed = 3.0; // This is speed, not velocity. speedBasicBall = sqrt(vx^2 + vy^2)
-int basicBallSide = 15;     // Currently, balls are squares. Why? Collision detection is probably easier.
+float basicBallSide = 55;     // Currently, balls are squares. Why? Collision detection is probably easier.

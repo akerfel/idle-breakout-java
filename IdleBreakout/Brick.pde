@@ -1,6 +1,8 @@
 public class Brick {
   public int x;
   public int y;
+  public int w = brickWidth;
+  public int h = brickHeight;
   
   public int hp;
   color currentColor;
@@ -29,7 +31,7 @@ public class Brick {
   }
   
   public boolean mouseOn() {
-    return mouseX >= x && mouseX <= x + brickWidth && mouseY >= y && mouseY < y + brickHeight;
+    return mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY < y + h;
   }
   
   public int getHp() {
@@ -44,7 +46,7 @@ public class Brick {
   public void draw() {
     currentColor = selectColor();
     fill(currentColor);  // 
-    rect(x, y, brickWidth, brickHeight);
+    rect(x, y, w, h);
     fill(textColor);
     textSize(18);
     text(str(hp), x + 32, y + 18);

@@ -5,6 +5,8 @@ public class BasicBall {
   float y;
   float vx;
   float vy;
+  float w = basicBallSide;
+  float h = basicBallSide;
   
   public BasicBall(int x, int y) {
       this.x = x;
@@ -29,36 +31,42 @@ public class BasicBall {
   public void update() {
     x += vx;
     y += vy;
-    checkWallBounce();
-    checkBrickBounce();
+    checkBounces();
   }
   
-  public void checkBrickBounce() {
-    /*
-    int xint = int(x);
-    int yint = int(y);
-    
-    for (Brick brick: bricks) {
-      if ( (abs(xint - brick.x) < 5 || abs(xint - (brick.x + brickWidth)) < 5) && yint >= brick.y && yint <= brick.y + brickHeight) {
+  public void checkBounces() {
+    float nextx = x + vx;
+    float nexty = y + vy;
+    for (Brick brick : bricks) {
+      
+      //if I keep moving in my current X direction, will I collide with the center rectangle?
+      if (nextx + w > brick.x &&
+          nextx < brick.x + brick.w &&
+          y + h > brick.y &&
+          y < brick.y + brick.h) {
+        vx *= -1.0;
+      }
+      
+      //bounce off left and right edges of screen
+      if (x <= 0 || x >= width - basicBallSide) {
         vx *= -1.0;  
-        brick.damage();
       }
-      else if ( (abs(yint - brick.y) < 5 || abs(yint - (brick.y + brickHeight)) < 5) && xint >= brick.x && xint <= brick.x + brickWidth) {
+      
+      //if I keep moving in my current Y direction, will I collide with the center rectangle?
+      if (nexty + h > brick.y &&
+          nexty < brick.y + brick.h &&
+          x + w > brick.x &&
+          x < brick.x + brick.w) {
+        vy *= -1.0;
+      }
+      
+      //bounce off top and bottom edges of screen
+      if (y <= 0 ||y >= height - basicBallSide) {
         vy *= -1.0;  
-        brick.damage();
       }
     }
-    */
   }
   
-  public void checkWallBounce() {
-    if (x <= 0 || x >= width - basicBallSide) {
-      vx *= -1.0;  
-    }
-    if (y <= 0 ||y >= height - basicBallSide) {
-      vy *= -1.0;  
-    }
-  }
   
   public void draw() {
     fill(basicBallColor);  // 
