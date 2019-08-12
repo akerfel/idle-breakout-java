@@ -24,7 +24,7 @@ public class BasicBall {
     vx = random(-basicBallSpeed, basicBallSpeed);
     vy = sqrt(pow(basicBallSpeed, 2.0) - pow(vx, 2.0));
     if (random(0, 1) < 0.5) {
-      vy *= -1;  // 50% chance to invert y.
+      vy *= -1.0;  // 50% chance to invert y.
     }
   }
   
@@ -48,7 +48,7 @@ public class BasicBall {
           y < brick.y + brick.h) {
         vx *= -1.0;
         brick.damage();
-        if (brick.hp == 0) {
+        if (brick.hp == 0 && !brick.isWall) {  // Added with commit ad8388a. Read commit message for context (fixed bug).
           iterator.remove();  
         }
         break;
@@ -61,7 +61,7 @@ public class BasicBall {
           x < brick.x + brick.w) {
         vy *= -1.0;
         brick.damage();
-        if (brick.hp == 0) {
+        if (brick.hp == 0 && !brick.isWall) {
           iterator.remove();  
         }
         break;

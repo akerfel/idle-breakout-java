@@ -2,7 +2,7 @@ int gold = 0;
 int level = 1;
 ArrayList<Brick> bricks = new ArrayList<Brick>();
 ArrayList<BasicBall> basicBalls = new ArrayList<BasicBall>();
-boolean cheatMode = false;
+boolean cheatMode = true;
 int cheatModeBalls = 10;
 
 // Buttons

@@ -3,6 +3,7 @@ public class Brick {
   public int y;
   public int w;
   public int h;
+  public boolean isWall;
   
   public int hp;
  
@@ -13,6 +14,16 @@ public class Brick {
       this.w = w;
       this.h = h;
       this.hp = hp;
+      this.isWall = false;
+  }
+  
+  public Brick(int x, int y, int w, int h, boolean isWall) {
+      this.x = x;
+      this.y = y;
+      this.w = w;
+      this.h = h;
+      this.hp = hp;
+      this.isWall = isWall;
   }
   
   color selectColor() {
@@ -43,7 +54,7 @@ public class Brick {
   }
   
   public void damage() {
-    if (hp != -1) {  //hp -1 means invincible
+    if (!isWall) {  
       hp--;
       gold++;
     }
@@ -52,7 +63,7 @@ public class Brick {
   public void draw() {
     fill(selectColor()); 
     rect(x, y, w, h);
-    if (hp != -1) {
+    if (!isWall) {
       fill(textColor);
       textSize(18);
       text(str(hp), x + 32, y + 18);

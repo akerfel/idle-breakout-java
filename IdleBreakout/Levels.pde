@@ -3,8 +3,8 @@ public void loadLevel1() {
 }
 
 public void loadLevel2() {
-  makeRectOfBricks(width / 2 - 300, height / 2 - 100, 4, 8, 2);
-  makeRectOfBricks(width / 2 + 100, height / 2 - 100, 4, 8, 2);
+  makeRectOfBricks(width / 2 - 300, height / 2 - 100, 4, 12, 2);
+  makeRectOfBricks(width / 2 + 100, height / 2 - 100, 4, 12, 2);
 }
 
 public void loadLevel3() {

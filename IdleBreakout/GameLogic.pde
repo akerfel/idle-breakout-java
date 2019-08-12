@@ -5,7 +5,7 @@ void removeDeadBricks() {
   
   while (iterator.hasNext()) {
     Brick brick = iterator.next();
-    if (brick.hp == 0) {
+    if (brick.hp == 0 && !brick.isWall) {
       iterator.remove();  
     }
   }
@@ -37,11 +37,10 @@ void checkIfNextLevel() {
 }
 
 void makeWallBricks() {
-  //hp -1 means invincible
-  bricks.add(new Brick(0, 0, width, 60, -1));    // top brick
-  bricks.add(new Brick(0, height-20, width, 40, -1));
-  bricks.add(new Brick(0, 0, 20, height, -1));
-  bricks.add(new Brick(width-20, 0, 20, height, -1));
+  bricks.add(new Brick(0, 0, width, 60, true));    // top brick
+  bricks.add(new Brick(0, height-20, width, 40, true));
+  bricks.add(new Brick(0, 0, 20, height, true));
+  bricks.add(new Brick(width-20, 0, 20, height, true));
 }
 
 void makeRectOfBricks(int x, int y, int w, int h, int hp) {
