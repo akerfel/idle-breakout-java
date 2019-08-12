@@ -1,3 +1,5 @@
+// Currently, balls are squares. Why? Collision detection is probably easier.
+
 public class BasicBall {
   float x;
   float y;
@@ -32,6 +34,7 @@ public class BasicBall {
   }
   
   public void checkBrickBounce() {
+    /*
     int xint = int(x);
     int yint = int(y);
     
@@ -45,19 +48,20 @@ public class BasicBall {
         brick.damage();
       }
     }
+    */
   }
   
   public void checkWallBounce() {
-    if (x <= 0 || x >= width) {
+    if (x <= 0 || x >= width - basicBallSide) {
       vx *= -1.0;  
     }
-    if (y <= 0 ||y >= height) {
+    if (y <= 0 ||y >= height - basicBallSide) {
       vy *= -1.0;  
     }
   }
   
   public void draw() {
     fill(basicBallColor);  // 
-    square(x, y, basicBallDiameter);
+    square(x, y, basicBallSide);
   }
 }
