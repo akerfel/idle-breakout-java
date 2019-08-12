@@ -45,11 +45,13 @@ public class BasicBall {
           y + h > brick.y &&
           y < brick.y + brick.h) {
         vx *= -1.0;
+        println("bounce brick nextx");
       }
       
       //bounce off left and right edges of screen
-      if (x <= 0 || x >= width - basicBallSide) {
+      else if (x <= 0 || x >= width - basicBallSide) {
         vx *= -1.0;  
+        println("bounce wall left/right");
       }
       
       //if I keep moving in my current Y direction, will I collide with the center rectangle?
@@ -58,11 +60,13 @@ public class BasicBall {
           x + w > brick.x &&
           x < brick.x + brick.w) {
         vy *= -1.0;
+        println("bounce brick nexty");
       }
       
       //bounce off top and bottom edges of screen
-      if (y <= 0 ||y >= height - basicBallSide) {
+      else if (y <= 0 || y >= height - basicBallSide) {
         vy *= -1.0;  
+        println("bounce wall top/bot");
       }
     }
   }
