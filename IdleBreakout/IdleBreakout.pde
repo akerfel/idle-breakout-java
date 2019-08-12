@@ -3,7 +3,7 @@ int level = 1;
 ArrayList<Brick> bricks = new ArrayList<Brick>();
 ArrayList<BasicBall> basicBalls = new ArrayList<BasicBall>();
 boolean cheatMode = true;
-int cheatModeBalls = 1000;
+int cheatModeBalls = 10;
 
 void setup() {
   size(800, 600);

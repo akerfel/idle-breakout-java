@@ -28,7 +28,6 @@ void checkIfNextLevel() {
   if (bricks.size() == 4) {    // 4 left means there are no bricks left, because the walls are also bricks.
       loadNextLevel();
   }
-  println("size: " + bricks.size());
 }
 
 void makeWallBricks() {
@@ -39,9 +38,10 @@ void makeWallBricks() {
 }
 
 void makeRectOfBricks(int x, int y, int w, int h, int hp) {
+  int spaceBetweenBricks = 0;
   for (int i = 0; i < w; i++) {
     for (int j = 0; j < h; j++) {
-      Brick newBrick = new Brick(x + i * (brickWidth + 3), y + j * (brickHeight + 3), brickWidth, brickHeight, hp);
+      Brick newBrick = new Brick(x + i * (brickWidth + spaceBetweenBricks), y + j * (brickHeight + spaceBetweenBricks), brickWidth, brickHeight, hp);
       bricks.add(newBrick);
     }
   }
