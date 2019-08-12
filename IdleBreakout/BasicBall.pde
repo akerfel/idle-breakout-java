@@ -37,8 +37,10 @@ public class BasicBall {
   public void checkBounces() {
     float nextx = x + vx;
     float nexty = y + vy;
-    for (Brick brick : bricks) {
-      
+    
+    Iterator<Brick> iterator = bricks.iterator();
+    while (iterator.hasNext()) {
+      Brick brick = iterator.next();
       //if I keep moving in my current X direction, will I collide with the center rectangle?
       if (nextx + w > brick.x &&
           nextx < brick.x + brick.w &&
@@ -46,6 +48,9 @@ public class BasicBall {
           y < brick.y + brick.h) {
         vx *= -1.0;
         brick.damage();
+        if (brick.hp == 0) {
+          iterator.remove();  
+        }
         println("bounce brick nextx");
       }
       
@@ -56,6 +61,9 @@ public class BasicBall {
           x < brick.x + brick.w) {
         vy *= -1.0;
         brick.damage();
+        if (brick.hp == 0) {
+          iterator.remove();  
+        }
         println("bounce brick nexty");
       }
       
