@@ -1,15 +1,18 @@
 public class Brick {
-  int x;
-  int y;
-  
+  public int x;
+  public int y;
+  public int w;
+  public int h;
   
   public int hp;
   color currentColor;
  
   
-  public Brick(int x, int y, int hp) {
+  public Brick(int x, int y, int w, int h, int hp) {
       this.x = x;
       this.y = y;
+      this.w = w;
+      this.h = h;
       this.hp = hp;
   }
   
@@ -30,7 +33,7 @@ public class Brick {
   }
   
   public boolean mouseOn() {
-    return mouseX >= x && mouseX <= x + brickWidth && mouseY >= y && mouseY < y + brickHeight;
+    return mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY < y + h;
   }
   
   public int getHp() {
@@ -39,13 +42,15 @@ public class Brick {
   
   public void damage() {
     gold++;
-    hp--;
+    if (hp != -1) {  //hp -1 means invincible
+      hp--;
+    }
   }
   
   public void draw() {
     currentColor = selectColor();
     fill(currentColor);  // 
-    rect(x, y, brickWidth, brickHeight);
+    rect(x, y, w, h);
     fill(textColor);
     textSize(18);
     text(str(hp), x + 32, y + 18);

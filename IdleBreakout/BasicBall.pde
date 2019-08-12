@@ -1,8 +1,12 @@
+// Currently, balls are squares. Why? Collision detection is probably easier.
+
 public class BasicBall {
   float x;
   float y;
   float vx;
   float vy;
+  float w = basicBallSide;
+  float h = basicBallSide;
   
   public BasicBall(int x, int y) {
       this.x = x;
@@ -27,27 +31,49 @@ public class BasicBall {
   public void update() {
     x += vx;
     y += vy;
-    checkWallBounce();
-    checkBrickBounce();
+    checkBounces();
   }
   
-  public void checkBrickBounce() {
-    for (Brick brick: bricks) {
+  public void checkBounces() {
+    float nextx = x + vx;
+    float nexty = y + vy;
+    
+    Iterator<Brick> iterator = bricks.iterator();
+    while (iterator.hasNext()) {
+      Brick brick = iterator.next();
+      //if I keep moving in my current X direction, will I collide with the center rectangle?
+      if (nextx + w > brick.x &&
+          nextx < brick.x + brick.w &&
+          y + h > brick.y &&
+          y < brick.y + brick.h) {
+        vx *= -1.0;
+        brick.damage();
+        if (brick.hp == 0) {
+          iterator.remove();  
+        }
+        print("bounce_brick_nextx\t");
+        break;
+      }
       
-    }
-  }
-  
-  public void checkWallBounce() {
-    if (x <= 0 || x >= width) {
-      vx *= -1.0;  
-    }
-    if (y <= 0 ||y >= height) {
-      vy *= -1.0;  
+      //if I keep moving in my current Y direction, will I collide with the center rectangle?
+      if (nexty + h > brick.y &&
+          nexty < brick.y + brick.h &&
+          x + w > brick.x &&
+          x < brick.x + brick.w) {
+        vy *= -1.0;
+        brick.damage();
+        if (brick.hp == 0) {
+          iterator.remove();  
+        }
+        print("bounce_brick_nexty\t");
+        break;
+      }
+      
     }
   }
   
   public void draw() {
     fill(basicBallColor);  // 
-    square(x, y, basicBallDiameter);
+    rect(x, y, w, h);
   }
 }
