@@ -11,6 +11,12 @@ void removeDeadBricks() {
   }
 }
 
+void addButtons() {
+  basicBallButton = new BasicBallButton(30, 10);
+  buttons.add(basicBallButton);  
+}
+
+
 void loadNextLevel() {
   level++;
   
@@ -31,7 +37,7 @@ void checkIfNextLevel() {
 }
 
 void makeWallBricks() {
-  bricks.add(new Brick(0, 0, width, 20, -1));  //hp -1 means invincible
+  bricks.add(new Brick(0, 0, width, 45, -1));  //hp -1 means invincible
   bricks.add(new Brick(0, height-20, width, 20, -1));
   bricks.add(new Brick(0, 0, 20, height, -1));
   bricks.add(new Brick(width-20, 0, 20, height, -1));

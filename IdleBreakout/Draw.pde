@@ -3,12 +3,13 @@ public void drawEverything() {
   drawBasicBalls();
   drawGold();
   drawLevelNumber();
+  drawButtons();
 }
 
 public void drawBricks() {
    for (Brick brick : bricks) {
-    brick.draw();
-  }
+      brick.draw();
+    }
 }
 
 public void drawBasicBalls() {
@@ -24,7 +25,15 @@ public void drawGold() {
 }
 
 public void drawLevelNumber() {
+  textAlign(CENTER);
   fill(textColor);
   String strLevel = str(level);
-  text("Level: " + strLevel, 23, 17);
+  text("Level: " + strLevel, width/2, 17);
+  textAlign(BASELINE);
+}
+
+public void drawButtons() {
+  for (Button button : buttons) {
+    button.draw();
+  }
 }

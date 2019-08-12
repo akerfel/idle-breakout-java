@@ -5,7 +5,6 @@ public class Brick {
   public int h;
   
   public int hp;
-  color currentColor;
  
   
   public Brick(int x, int y, int w, int h, int hp) {
@@ -28,6 +27,9 @@ public class Brick {
       case 3:
         selectedColor = color(255, 129, 85);
         break;
+      default:
+        selectedColor = color(255, 255, 255);
+        break;
     }
   return selectedColor;
   }
@@ -48,8 +50,7 @@ public class Brick {
   }
   
   public void draw() {
-    currentColor = selectColor();
-    fill(currentColor);  // 
+    fill(selectColor()); 
     rect(x, y, w, h);
     if (hp != -1) {
       fill(textColor);
