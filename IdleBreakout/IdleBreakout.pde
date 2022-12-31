@@ -2,8 +2,8 @@ int gold = 0;
 int level = 1;
 ArrayList<Brick> bricks = new ArrayList<Brick>();
 ArrayList<BasicBall> basicBalls = new ArrayList<BasicBall>();
-boolean cheatMode = true;
-int cheatModeBalls = 1;
+boolean cheatMode = false;
+int cheatModeBalls = 5;
 
 // Buttons
 ArrayList<Button> buttons = new ArrayList<Button>();
