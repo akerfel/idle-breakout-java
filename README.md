@@ -1,6 +1,6 @@
 # idle-breakout-java
 
-An implementation of a subset of the game [idle breakout](https://kodiqi.itch.io/idle-breakout), originally created by kodiqi. Implemented using Java/Processing.
+An implementation of a subset of the game [idle breakout](https://kodiqi.itch.io/idle-breakout), originally created by kodiqi. Made with Java/Processing.
 
 To ensure smooth collision detection, I applied techniques suggested on [this webpage](https://happycoding.io/tutorials/processing/collision-detection).
 
